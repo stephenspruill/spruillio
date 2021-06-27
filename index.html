@@ -10,7 +10,7 @@
 
 <body class="has-background-color-davys-gray">
 
-  <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="http://spruill.io">
         <h1 class="title has-text-color-cadet-gray">Stephen</h1>
@@ -55,12 +55,43 @@
     </div>
   </nav>
 
-  <section id="Projects" class="section is-medium has-text-centered">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // Get all "navbar-burger" elements
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      // Check if there are any navbar burgers
+      if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+
+    });
+  </script>
+
+  <section class="section is-medium has-text-centered">
     <h1 class="title has-text-color-white">Welcome,</h1>
     <p class="subtitle has-text-color-cadet-gray">
       My name is <strong style="color: #C75000;">Stephen Spruill</strong> and these are my projects.
     </p>
 
+  </section>
+
+  <section id="Projects" class="section">
   </section>
 
   <section class="section">
@@ -123,63 +154,63 @@
 
   <div class="container is-max-desktop">
     <form action="https://formsubmit.co/b1d88c5350901130c39acc5b50216f56" method="POST">
-    <div class="field is-horizontal">
+      <div class="field is-horizontal">
 
-      <div class="field-body">
-        <div class="field">
-          <p class="control has-icons-left">
-            <input class="input" type="text" name="Name" placeholder="Name">
-            <span class="icon is-small is-left">
-              <i class="fas fa-user"></i>
-            </span>
-          </p>
-        </div>
-        <div class="field">
-          <p class="control has-icons-left">
-            <input class="input" type="email" name="Email" placeholder="Email">
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-
-      <div class="field-body">
-        <div class="field">
-          <div class="control">
-            <input class="input" type="text" name="Subject" placeholder="e.g. Partnership opportunity">
+        <div class="field-body">
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="text" name="Name" placeholder="Name">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="email" name="Email" placeholder="Email">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </p>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="field is-horizontal">
+      <div class="field is-horizontal">
 
-      <div class="field-body">
-        <div class="field">
-          <div class="control">
-            <textarea class="textarea" name="Message" placeholder="Your message here..."></textarea>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <input class="input" type="text" name="Subject" placeholder="e.g. Partnership opportunity">
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="field is-horizontal">
+      <div class="field is-horizontal">
 
-      <div class="field-body">
-        <div class="field">
-          <div class="control">
-            <button class="button has-background-color-burnt-orange" type="submit">
-              Send message
-            </button>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <textarea class="textarea" name="Message" placeholder="Your message here..."></textarea>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </form>
+
+      <div class="field is-horizontal">
+
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <button class="button has-background-color-burnt-orange" type="submit">
+                Send message
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 
   <section class="section">
@@ -220,7 +251,9 @@
       <button class="delete" aria-label="close" id="close"></button>
     </header>
     <section class="modal-card-body">
-      <iframe src="https://docs.google.com/document/d/e/2PACX-1vToHEiBiYDzbQ9PWZ_8TZLYL-kW2iPOQAgqnw1aDxQwdkW5fhk5zXTi_w0dqLxxiOspeins1QjZQbv9/pub?embedded=true" style="width: 100%; height: 100%;"></iframe>
+      <iframe
+        src="https://docs.google.com/document/d/e/2PACX-1vToHEiBiYDzbQ9PWZ_8TZLYL-kW2iPOQAgqnw1aDxQwdkW5fhk5zXTi_w0dqLxxiOspeins1QjZQbv9/pub?embedded=true"
+        style="width: 100%; height: 100%;"></iframe>
     </section>
   </div>
 </div>
@@ -238,4 +271,5 @@
     modal.classList.remove('is-active');
   })
 </script>
+
 </html>
